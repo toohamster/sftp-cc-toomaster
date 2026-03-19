@@ -84,16 +84,15 @@ GITHUB_TOKEN=$(git remote get-url origin | sed -n 's/https:\/\/[^:]*:\([^@]*\)@.
 COMMIT_HASH=$(git rev-parse HEAD)
 
 # 5. 使用 curl 创建 release
+# 注意：JSON body 中避免使用反引号 `，会被 bash 解析为命令替换
+# 如需代码块，用文字描述或省略 markdown 代码块标记
 curl -s -X POST \
   -H "Authorization: Bearer $GITHUB_TOKEN" \
   -H "Accept: application/vnd.github.v3+json" \
   https://api.github.com/repos/toohamster/sftp-cc-toomaster/releases \
-  -d "{
-    \"tag_name\": \"v1.0.x\",
-    \"name\": \"v1.0.x - Brief Description\",
-    \"body\": \"Release notes...\",
-    \"target_commitish\": \"$COMMIT_HASH\"
-  }"
+  -d "{\"tag_name\":\"v1.0.x\",\"name\":\"v1.0.x - Title\",\"body\":\"Release notes here\",\"target_commitish\":\"$COMMIT_HASH\"}"
 ```
 
-token 已从 git remote URL 自动获取，无需额外设置环境变量。
+**常见错误：**
+- ❌ JSON body 中使用反引号 `` `command` `` — bash 会尝试执行其中的命令
+- ✅ 解决方法：使用纯文本、临时文件、或转义为 \`
