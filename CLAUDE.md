@@ -49,3 +49,35 @@ bash install.sh /tmp/test-project
 # 测试 dry-run push
 bash scripts/sftp-push.sh -n
 ```
+
+## 操作规范
+
+### 发布 GitHub Release
+
+**使用 GitHub HTTP API，不使用 gh 命令：**
+
+```bash
+# 1. 创建并推送 tag
+git tag v1.0.6
+git push origin v1.0.6
+
+# 2. 从 git remote URL 获取 token
+GITHUB_TOKEN=$(git remote get-url origin | sed -n 's/https:\/\/[^:]*:\([^@]*\)@.*/\1/p')
+
+# 3. 获取最新 commit hash
+COMMIT_HASH=$(git rev-parse HEAD)
+
+# 4. 使用 curl 创建 release
+curl -s -X POST \
+  -H "Authorization: Bearer $GITHUB_TOKEN" \
+  -H "Accept: application/vnd.github.v3+json" \
+  https://api.github.com/repos/toohamster/sftp-cc-toomaster/releases \
+  -d "{
+    \"tag_name\": \"v1.0.6\",
+    \"name\": \"v1.0.6 - Feature Name\",
+    \"body\": \"Release notes...\",
+    \"target_commitish\": \"$COMMIT_HASH\"
+  }"
+```
+
+token 已从 git remote URL 自动获取，无需额外设置环境变量。
