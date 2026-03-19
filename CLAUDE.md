@@ -56,25 +56,34 @@ bash scripts/sftp-push.sh -n
 
 **使用 GitHub HTTP API，不使用 gh 命令：**
 
-```bash
-# 1. 创建并推送 tag
-git tag v1.0.6
-git push origin v1.0.6
+当用户说 "提交打标签和发布" 时，自动执行以下流程（无需用户确认）：
 
-# 2. 从 git remote URL 获取 token
+```bash
+# 1. 提交所有更改
+git add -A
+git commit -m "feat: description
+
+Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>"
+
+# 2. 推送并创建 tag
+git push origin main
+git tag v1.0.x
+git push origin v1.0.x
+
+# 3. 从 git remote URL 获取 token
 GITHUB_TOKEN=$(git remote get-url origin | sed -n 's/https:\/\/[^:]*:\([^@]*\)@.*/\1/p')
 
-# 3. 获取最新 commit hash
+# 4. 获取最新 commit hash
 COMMIT_HASH=$(git rev-parse HEAD)
 
-# 4. 使用 curl 创建 release
+# 5. 使用 curl 创建 release
 curl -s -X POST \
   -H "Authorization: Bearer $GITHUB_TOKEN" \
   -H "Accept: application/vnd.github.v3+json" \
   https://api.github.com/repos/toohamster/sftp-cc-toomaster/releases \
   -d "{
-    \"tag_name\": \"v1.0.6\",
-    \"name\": \"v1.0.6 - Feature Name\",
+    \"tag_name\": \"v1.0.x\",
+    \"name\": \"v1.0.x - Brief Description\",
     \"body\": \"Release notes...\",
     \"target_commitish\": \"$COMMIT_HASH\"
   }"
