@@ -65,4 +65,18 @@ git clone https://github.com/toohamster/sftp-cc.git
 
 ## 关于作者
 
+![Author Photo](https://avatars.githubusercontent.com/u/16458414?s=100&u=7fd7d3827bd4824339e1ee5bf098fb78725728ec&v=4)
+
+**toohamster** - GitHub: [@toohamster](https://github.com/toohamster)
+
 本书基于作者在开发 sftp-cc（Claude Code SFTP 上传工具）过程中的实战经验编写，包含大量真实踩坑记录。
+
+详细说明请参阅 [关于作者](authors.md)
+
+---
+
+## 授权协议
+
+本书采用 **MIT License** 授权。
+
+详见 [LICENSE](../LICENSE) 文件。
