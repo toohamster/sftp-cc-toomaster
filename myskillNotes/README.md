@@ -56,7 +56,7 @@ This book guides you through the complete process of developing a Claude Code Sk
 ### Electronic Version (GitHub Repository)
 **First Edition (Digital), March 2026**
 
-Released under the [MIT License](LICENSE).
+Released under the [MIT License](../LICENSE).
 
 - ✅ Free to read, copy, modify
 - ✅ Personal learning and use

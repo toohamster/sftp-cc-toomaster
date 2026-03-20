@@ -1376,14 +1376,16 @@ check_dependencies
 
 ## 关于本书
 
+**第一版（数字版）, 2026 年 3 月**
+
 **作者**：[toohamster](https://github.com/toohamster)
 
 ![Author Photo](https://avatars.githubusercontent.com/u/16458414?s=100&u=7fd7d3827bd4824339e1ee5bf098fb78725728ec&v=4)
 
-**授权**：[MIT License](../LICENSE)
+**授权**：电子版 MIT License，纸质版/商业版 © All Rights Reserved
 **源码**：[github.com/toohamster/sftp-cc](https://github.com/toohamster/sftp-cc)
 
-详细说明请参阅 [关于作者](../authors.md)
+详细说明请参阅 [LICENSE](../../LICENSE) 和 [关于作者](../authors.md)
 
 ---
 

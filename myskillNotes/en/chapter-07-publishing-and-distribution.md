@@ -1145,4 +1145,12 @@ By the end of Chapter 8, you'll write production-ready Skills!
 
 ---
 
-*Author: toohamster | MIT License | [sftp-cc](https://github.com/toohamster/sftp-cc)*
+## About this Book
+
+**First Edition (Digital), March 2026**
+
+**Author**: [toohamster](https://github.com/toohamster)
+**License**: Electronic version: MIT License | Print/Commercial: All Rights Reserved
+**Source**: [github.com/toohamster/sftp-cc](https://github.com/toohamster/sftp-cc)
+
+See [LICENSE](../../LICENSE) and [About Author](../authors.md) for details.

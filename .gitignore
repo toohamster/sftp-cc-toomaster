@@ -3,7 +3,8 @@
 .project
 *.patch
 .idea/
-.claude
+.claude/sftp-cc
+.claude/settings.local.json
 .git/
 cache/
 .env

@@ -715,3 +715,15 @@ In Chapter 3, we'll write the first Skill from scratch:
 - First runnable Skill
 
 By the end of Chapter 3, you'll have your first working Skill!
+
+---
+
+## About this Book
+
+**First Edition (Digital), March 2026**
+
+**Author**: [toohamster](https://github.com/toohamster)
+**License**: Electronic version: MIT License | Print/Commercial: All Rights Reserved
+**Source**: [github.com/toohamster/sftp-cc](https://github.com/toohamster/sftp-cc)
+
+See [LICENSE](../../LICENSE) and [About Author](../authors.md) for details.

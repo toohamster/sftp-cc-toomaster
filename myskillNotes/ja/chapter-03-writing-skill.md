@@ -731,4 +731,12 @@ head -1 scripts/sftp-push.sh
 
 ---
 
-*著者：toohamster | MIT License | [sftp-cc](https://github.com/toohamster/sftp-cc)*
+## 本書について
+
+**初版（デジタル版）, 2026 年 3 月**
+
+**著者**: [toohamster](https://github.com/toohamster)
+**ライセンス**: 電子版：MIT License | 印刷版/商業版：All Rights Reserved
+**ソース**: [github.com/toohamster/sftp-cc](https://github.com/toohamster/sftp-cc)
+
+詳細は [LICENSE](../../LICENSE) と [著者について](../authors.md) をご覧ください。

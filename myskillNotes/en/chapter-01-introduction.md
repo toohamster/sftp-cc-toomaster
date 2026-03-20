@@ -480,3 +480,15 @@ In Chapter 2, we'll dive into project planning and design:
 - Configuration file design principles
 
 By the end of Chapter 2, you'll complete the full design document for sftp-cc project.
+
+---
+
+## About this Book
+
+**First Edition (Digital), March 2026**
+
+**Author**: [toohamster](https://github.com/toohamster)
+**License**: Electronic version: MIT License | Print/Commercial: All Rights Reserved
+**Source**: [github.com/toohamster/sftp-cc](https://github.com/toohamster/sftp-cc)
+
+See [LICENSE](../../LICENSE) and [About Author](../authors.md) for details.

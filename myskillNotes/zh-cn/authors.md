@@ -32,7 +32,7 @@ toohamster 是一名热爱开源的开发者，专注于自动化开发和 DevOp
 
 **第一版（数字版）, 2026 年 3 月**
 
-详见 [LICENSE](../LICENSE)。
+详见 [LICENSE](../../LICENSE)。
 
 ---
 

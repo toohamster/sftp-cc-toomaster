@@ -90,7 +90,7 @@ git clone https://github.com/toohamster/sftp-cc.git
 ### 电子版（GitHub 仓库）
 **第一版（数字版）, 2026 年 3 月**
 
-根据 [MIT License](../LICENSE) 授权。
+根据 [MIT License](../../LICENSE) 授权。
 
 - ✅ 免费阅读、复制、修改
 - ✅ 个人学习使用

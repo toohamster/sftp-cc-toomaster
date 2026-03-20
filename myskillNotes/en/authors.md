@@ -32,7 +32,7 @@ In addition to the sftp-cc project, the author actively participates in the deve
 
 **First Edition (Digital), March 2026**
 
-See [LICENSE](../LICENSE) for details.
+See [LICENSE](../../LICENSE) for details.
 
 ---
 

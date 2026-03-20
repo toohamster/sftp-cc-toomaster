@@ -1453,8 +1453,10 @@ bash -x script.sh 2>&1 | sort -t' ' -k2 -n | tail -20
 
 ## 关于本书
 
+**第一版（数字版）, 2026 年 3 月**
+
 **作者**：[toohamster](https://github.com/toohamster)
-**授权**：[MIT License](../LICENSE)
+**授权**：电子版 MIT License，纸质版/商业版 © All Rights Reserved
 **源码**：[github.com/toohamster/sftp-cc](https://github.com/toohamster/sftp-cc)
 
-详细说明请参阅 [关于作者](../authors.md)
+详细说明请参阅 [LICENSE](../../LICENSE) 和 [关于作者](../authors.md)
