@@ -1,0 +1,136 @@
+name: Generate PDF from Markdown
+
+on:
+  push:
+    branches: [write-skill-book]
+    paths: ['myskillNotes/**/*.md']
+
+jobs:
+  build-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install pandoc and LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            pandoc \
+            texlive-xetex \
+            texlive-fonts-recommended \
+            texlive-lang-chinese \
+            texlive-lang-japanese \
+            fonts-noto-cjk
+
+      - name: Create output directory
+        run: mkdir -p pdfs
+
+      - name: Generate PDF for English chapters
+        run: |
+          echo "Generating English PDFs..."
+          for file in myskillNotes/en/*.md; do
+            filename=$(basename "$file" .md)
+            echo "  -> $filename.pdf"
+            pandoc "$file" \
+              -o "pdfs/${filename}.pdf" \
+              --pdf-engine=xelatex \
+              -V documentclass=report \
+              -V geometry:margin=1in \
+              -V mainfont="Noto Serif CJK SC"
+          done
+
+      - name: Generate PDF for Japanese chapters
+        run: |
+          echo "Generating Japanese PDFs..."
+          for file in myskillNotes/ja/*.md; do
+            filename=$(basename "$file" .md)
+            echo "  -> $filename.pdf"
+            pandoc "$file" \
+              -o "pdfs/${filename}.pdf" \
+              --pdf-engine=xelatex \
+              -V documentclass=report \
+              -V geometry:margin=1in \
+              -V mainfont="Noto Serif CJK SC"
+          done
+
+      - name: Generate PDF for Chinese chapters
+        run: |
+          echo "Generating Chinese PDFs..."
+          for file in myskillNotes/zh-cn/*.md; do
+            filename=$(basename "$file" .md)
+            echo "  -> $filename.pdf"
+            pandoc "$file" \
+              -o "pdfs/${filename}.pdf" \
+              --pdf-engine=xelatex \
+              -V documentclass=report \
+              -V geometry:margin=1in \
+              -V mainfont="Noto Serif CJK SC"
+          done
+
+      - name: Combine all English chapters into one book
+        run: |
+          echo "Combining English book..."
+          # Create combined markdown
+          cat myskillNotes/en/chapter-*.md > pdfs/en-book-combined.md
+          pandoc pdfs/en-book-combined.md \
+            -o "pdfs/sftp-cc-book-en.pdf" \
+            --pdf-engine=xelatex \
+            -V documentclass=report \
+            -V geometry:margin=1in \
+            -V mainfont="Noto Serif CJK SC" \
+            -V titlepage \
+            -V title="sftp-cc: Claude Code Skill Development Book" \
+            -V author="toohamster"
+          rm pdfs/en-book-combined.md
+
+      - name: Combine all Chinese chapters into one book
+        run: |
+          echo "Combining Chinese book..."
+          cat myskillNotes/zh-cn/chapter-*.md > pdfs/zh-cn-book-combined.md
+          pandoc pdfs/zh-cn-book-combined.md \
+            -o "pdfs/sftp-cc-book-zh-cn.pdf" \
+            --pdf-engine=xelatex \
+            -V documentclass=report \
+            -V geometry:margin=1in \
+            -V mainfont="Noto Serif CJK SC" \
+            -V titlepage \
+            -V title="sftp-cc: Claude Code Skill 开发教程" \
+            -V author="toohamster"
+          rm pdfs/zh-cn-book-combined.md
+
+      - name: Combine all Japanese chapters into one book
+        run: |
+          echo "Combining Japanese book..."
+          cat myskillNotes/ja/chapter-*.md > pdfs/ja-book-combined.md
+          pandoc pdfs/ja-book-combined.md \
+            -o "pdfs/sftp-cc-book-ja.pdf" \
+            --pdf-engine=xelatex \
+            -V documentclass=report \
+            -V geometry:margin=1in \
+            -V mainfont="Noto Serif CJK SC" \
+            -V titlepage \
+            -V title="sftp-cc: Claude Code Skill 開発ガイド" \
+            -V author="toohamster"
+          rm pdfs/ja-book-combined.md
+
+      - name: List generated PDFs
+        run: |
+          echo "Generated PDFs:"
+          ls -lh pdfs/*.pdf
+
+      - name: Upload PDFs as artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: skill-book-pdfs
+          path: pdfs/*.pdf
+          retention-days: 30
+
+      - name: Commit and push PDFs to branch
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add pdfs/
+          git commit -m "docs: auto-generate PDFs from Markdown [skip ci]" || exit 0
+          git push
