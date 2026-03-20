@@ -61,7 +61,7 @@ bash scripts/sftp-push.sh -n
 
 ### 发布 GitHub Release
 
-**当用户说 "提交打标签和发布" 时，自动执行以下完整流程（无需确认）：**
+**当用户说 "提交打标签和发布" 时，自动执行以下完整流程（全部使用 GitHub HTTP API，无需 git tag/push tag）：**
 
 ```bash
 # 1. 提交所有更改
@@ -73,20 +73,24 @@ Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>"
 # 2. 推送代码
 git push origin main
 
-# 3. 创建并推送 tag（自动递增版本号）
-LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v2.0.0")
-# 从 v2.1.0 → v2.2.0 (minor 版本 +1)
-NEW_TAG=$(echo "$LAST_TAG" | awk -F. '{print $1"."$2"."$3+1}')
-git tag "$NEW_TAG"
-git push origin "$NEW_TAG"
-
-# 4. 从 git credential 获取 GitHub Token
+# 3. 从 git credential 获取 GitHub Token
 GITHUB_TOKEN=$(echo "url=https://github.com" | git credential fill | grep password | cut -d= -f2)
 
-# 5. 获取最新 commit hash
+# 4. 获取最新 commit hash
 COMMIT_HASH=$(git rev-parse HEAD)
 
-# 6. 使用 curl 创建 GitHub Release（JSON body 避免使用反引号）
+# 5. 获取当前最新 tag 并计算新版本
+LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v2.0.0")
+NEW_TAG=$(echo "$LAST_TAG" | awk -F. '{print $1"."$2"."$3+1}')
+
+# 6. 使用 GitHub API 创建 tag 引用
+curl -s -X POST \
+  -H "Authorization: Bearer $GITHUB_TOKEN" \
+  -H "Accept: application/vnd.github.v3+json" \
+  https://api.github.com/repos/toohamster/sftp-cc/git/refs \
+  -d "{\"ref\":\"refs/tags/$NEW_TAG\",\"sha\":\"$COMMIT_HASH\"}"
+
+# 7. 使用 GitHub API 创建 Release
 curl -s -X POST \
   -H "Authorization: Bearer $GITHUB_TOKEN" \
   -H "Accept: application/vnd.github.v3+json" \
@@ -96,5 +100,6 @@ curl -s -X POST \
 
 **注意：**
 - JSON body 中禁止使用反引号 `` ` `` — 会被 bash 解析为命令替换
-- 使用 `git credential fill` 获取 token，而不是从 remote URL 提取
+- 使用 `git credential fill` 获取 token
 - 版本号自动递增：从上一个 tag 的 minor 版本 +1
+- 全部使用 HTTP API，无需 `git tag` 和 `git push tag`
