@@ -1,0 +1,77 @@
+# About the Author
+
+![Author Photo](https://avatars.githubusercontent.com/u/16458414?s=400&u=7fd7d3827bd4824339e1ee5bf098fb78725728ec&v=4)
+
+**toohamster**
+
+GitHub: [@toohamster](https://github.com/toohamster)
+
+## Profile
+
+toohamster is an open-source enthusiast and developer focused on automation development and DevOps toolchain building. As the founder of the sftp-cc project, he is committed to simplifying file transfer workflows between developers and servers through natural language interaction.
+
+## Project Background
+
+This book is based on the development experience of the [sftp-cc](https://github.com/toohamster/sftp-cc) project. sftp-cc is a Claude Code Skill plugin that provides universal SFTP upload capabilities, supporting both Plugin Marketplace installation and manual installation.
+
+During the development of sftp-cc, the author summarized a complete methodology for Claude Code Skill development and organized it into this book, hoping to help more developers master this skill.
+
+## Tech Stack
+
+- **Programming Languages**: Shell, PHP, JavaScript
+- **DevOps**: CI/CD, GitHub Actions, Docker
+- **Development Tools**: Claude Code, VS Code, Git
+
+## Open Source Contributions
+
+In addition to the sftp-cc project, the author actively participates in the development and contribution of other open-source projects. He believes that through open-source collaboration, technology can become better.
+
+---
+
+## License
+
+This book is licensed under the **MIT License**.
+
+```
+MIT License
+
+Copyright (c) 2026 toohamster
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+---
+
+## Contact
+
+- **GitHub**: [github.com/toohamster](https://github.com/toohamster)
+- **Project Repository**: [github.com/toohamster/sftp-cc](https://github.com/toohamster/sftp-cc)
+- **Issue Tracker**: Please open an issue on GitHub
+
+---
+
+## Acknowledgments
+
+Thanks to all developers who contributed code, submitted issues, and participated in discussions for the sftp-cc project. It is because of your participation that this project continues to grow.
+
+Also thanks to the Claude Code team for providing such an excellent development tool that makes automation development easier.
+
+---
+
+*Last updated: March 2026*

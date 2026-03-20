@@ -1,82 +1,62 @@
-# 动手写 Claude Code Skill
+# Writing Claude Code Skills
 
-> 基于 sftp-cc 项目开发经验的实战指南
+> A Practical Guide from sftp-cc Project
 
-**副标题**：从零开始构建你的第一个 Claude Code Plugin
-
----
-
-## 本书目标
-
-通过开发一个完整的 SFTP 上传工具（sftp-cc），带你掌握 Claude Code Skill 的开发全流程：
-- 理解 Claude Code Plugin 架构
-- 掌握 SKILL.md 编写技巧
-- 学会多语言支持（i18n）
-- 发布到 Plugin Marketplace
+**副标题**: 从零开始构建你的第一个 Claude Code Plugin
 
 ---
 
-## 章节概览
+## Language Versions / 语言版本 / 言語バージョン
 
-| 章节 | 标题 | 核心内容 |
-|------|------|----------|
-| 第 1 章 | [认识 Claude Code Skill](chapter-01-introduction.md) | Plugin 架构、SKILL.md 结构、${CLAUDE_PLUGIN_ROOT} 变量解析 |
-| 第 2 章 | [项目规划与设计](chapter-02-planning.md) | 需求分析、功能设计、目录结构规划 |
-| 第 3 章 | [编写第一个 Skill](chapter-03-writing-skill.md) | SKILL.md 触发词设计、YAML frontmatter 配置 |
-| 第 4 章 | [脚本开发实战](chapter-04-script-development.md) | Shell 脚本编写、JSON 解析、错误处理 |
-| 第 5 章 | [多语言支持 (i18n)](chapter-05-internationalization.md) | 三语言方案设计、变量式多语言实现 |
-| 第 6 章 | [调试与测试](chapter-06-debugging-and-testing.md) | 本地测试、Plugin 安装验证、问题排查 |
-| 第 7 章 | [发布与分发](chapter-07-publishing-and-distribution.md) | GitHub Release、Marketplace 配置、版本管理 |
-| 第 8 章 | [进阶与最佳实践](chapter-08-advanced-topics.md) | 常见问题、性能优化、用户反馈处理 |
+| Language | 语言 | 言語 | Link |
+|----------|------|------|------|
+| 中文 | 简体中文 | Simplified Chinese | [中文版](zh-cn/README.md) |
+| English | 英语 | 英語 | [English Version](en/README.md) |
+| 日本語 | 日语 | 日本語 | [日本語版](ja/README.md) |
 
 ---
 
-## 开始阅读
+## Book Overview / 本书概述 / 本書の概要
 
-**推荐顺序**：从第 1 章开始，按顺序阅读和实践。
+This book guides you through the complete process of developing a Claude Code Skill by building an SFTP upload tool (sftp-cc).
 
-也可以根据你的需求跳转到特定章节：
-- 已有 Skill 想优化？→ 直接阅读 [第 5 章 (i18n)](chapter-05-internationalization.md)、[第 6 章 (调试)](chapter-06-debugging-and-testing.md)
-- 准备发布？→ 跳转到 [第 7 章 (发布)](chapter-07-publishing-and-distribution.md)
+本书通过构建 SFTP 上传工具（sftp-cc），带你掌握 Claude Code Skill 的完整开发流程。
 
----
-
-## 前置要求
-
-- 基础 Shell 脚本知识
-- 了解 Git 基本操作
-- 有 Claude Code 使用经验
+本書は、SFTP アップロードツール（sftp-cc）を構築することで、Claude Code Skill 開発の完全なプロセスをガイドします。
 
 ---
 
-## 项目源码
+## Chapter List / 章节列表 / 章一覧
 
-本书配套项目：https://github.com/toohamster/sftp-cc
-
-```bash
-# 克隆示例项目
-git clone https://github.com/toohamster/sftp-cc.git
-
-# 安装 Plugin
-/plugin marketplace add https://github.com/toohamster/sftp-cc
-```
+| # | Chinese | English | 日本語 |
+|---|---------|---------|--------|
+| 1 | [认识 Claude Code Skill](zh-cn/chapter-01-introduction.md) | [Introduction](en/chapter-01-introduction.md) | [Claude Code Skill とは](ja/chapter-01-introduction.md) |
+| 2 | [项目规划与设计](zh-cn/chapter-02-planning.md) | [Planning & Design](en/chapter-02-planning.md) | [プロジェクト計画](ja/chapter-02-planning.md) |
+| 3 | [编写第一个 Skill](zh-cn/chapter-03-writing-skill.md) | [Writing First Skill](en/chapter-03-writing-skill.md) | [初めての Skill](ja/chapter-03-writing-skill.md) |
+| 4 | [脚本开发实战](zh-cn/chapter-04-script-development.md) | [Script Development](en/chapter-04-script-development.md) | [スクリプト開発](ja/chapter-04-script-development.md) |
+| 5 | [多语言支持 (i18n)](zh-cn/chapter-05-internationalization.md) | [Internationalization](en/chapter-05-internationalization.md) | [国際化](ja/chapter-05-internationalization.md) |
+| 6 | [调试与测试](zh-cn/chapter-06-debugging-and-testing.md) | [Debugging & Testing](en/chapter-06-debugging-and-testing.md) | [デバッグとテスト](ja/chapter-06-debugging-and-testing.md) |
+| 7 | [发布与分发](zh-cn/chapter-07-publishing-and-distribution.md) | [Publishing & Distribution](en/chapter-07-publishing-and-distribution.md) | [公開と配布](ja/chapter-07-publishing-and-distribution.md) |
+| 8 | [进阶与最佳实践](zh-cn/chapter-08-advanced-topics.md) | [Advanced Topics](en/chapter-08-advanced-topics.md) | [トピックとベストプラクティス](ja/chapter-08-advanced-topics.md) |
 
 ---
 
-## 关于作者
-
-![Author Photo](https://avatars.githubusercontent.com/u/16458414?s=100&u=7fd7d3827bd4824339e1ee5bf098fb78725728ec&v=4)
+## About the Author / 关于作者 / 著者について
 
 **toohamster** - GitHub: [@toohamster](https://github.com/toohamster)
 
-本书基于作者在开发 sftp-cc（Claude Code SFTP 上传工具）过程中的实战经验编写，包含大量真实踩坑记录。
-
-详细说明请参阅 [关于作者](authors.md)
+- [中文版关于作者](zh-cn/authors.md)
+- [English About Author](en/authors.md)
+- [日本語 著者について](ja/authors.md)
 
 ---
 
-## 授权协议
+## License / 授权 / ライセンス
 
-本书采用 **MIT License** 授权。
+**MIT License**
 
-详见 [LICENSE](../LICENSE) 文件。
+This book is licensed under the MIT License.
+本书采用 MIT License 授权。
+本書は MIT License の下で公開されています。
+
+See [LICENSE](LICENSE) for details.
