@@ -4,18 +4,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-sftp-cc-toomaster 是一个 Claude Code Plugin，提供通用 SFTP 上传能力。支持通过 Plugin Marketplace 安装，也支持手动安装。
+sftp-cc 是一个 Claude Code Plugin，提供通用 SFTP 上传能力。支持通过 Plugin Marketplace 安装，也支持手动安装。
 
 **多语言支持 (i18n)**：支持英语 (en)、中文 (zh)、日语 (ja)。语言配置存储在 `.claude/sftp-cc/sftp-config.json` 的 `language` 字段。
 
 ## Architecture
 
 ```
-sftp-cc-toomaster/
+sftp-cc/
 ├── .claude-plugin/
 │   └── marketplace.json            # Marketplace 目录（插件信息 + 自托管分发）
 ├── skills/
-│   └── sftp-cc-toomaster/
+│   └── sftp-cc/
 │       └── SKILL.md                # Skill 定义（YAML frontmatter + 指令）
 ├── scripts/
 │   ├── sftp-push.sh                # 核心上传脚本（sftp batch mode）
@@ -89,7 +89,7 @@ COMMIT_HASH=$(git rev-parse HEAD)
 curl -s -X POST \
   -H "Authorization: Bearer $GITHUB_TOKEN" \
   -H "Accept: application/vnd.github.v3+json" \
-  https://api.github.com/repos/toohamster/sftp-cc-toomaster/releases \
+  https://api.github.com/repos/toohamster/sftp-cc/releases \
   -d "{\"tag_name\":\"v1.0.x\",\"name\":\"v1.0.x - Title\",\"body\":\"Release notes here\",\"target_commitish\":\"$COMMIT_HASH\"}"
 ```
 

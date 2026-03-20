@@ -1,18 +1,18 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "sftp-cc-toomaster",
+  "name": "sftp-cc",
   "description": "Universal SFTP upload tool for Claude Code. Supports incremental upload, private key auto-binding, and permission correction.",
   "owner": {
     "name": "toohamster"
   },
   "plugins": [
     {
-      "name": "sftp-cc-toomaster",
+      "name": "sftp-cc",
       "description": "Universal SFTP upload tool with incremental upload, private key auto-binding. Zero external dependencies.",
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/sftp-cc-toomaster"
+        "./skills/sftp-cc"
       ]
     }
   ]

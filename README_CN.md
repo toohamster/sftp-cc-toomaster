@@ -1,4 +1,4 @@
-# sftp-cc-toomaster
+# sftp-cc
 
 [English Documentation](README.md) | [日本語ドキュメント](README_JP.md)
 
@@ -20,20 +20,20 @@
 
 ```bash
 # 添加 marketplace
-/plugin marketplace add https://github.com/toohamster/sftp-cc-toomaster
+/plugin marketplace add https://github.com/toohamster/sftp-cc
 
 # 安装插件
-/plugin install sftp-cc-toomaster@sftp-cc-toomaster
+/plugin install sftp-cc@sftp-cc
 ```
 
 ### 方式二：手动安装
 
 ```bash
 # 克隆仓库
-git clone https://github.com/toohamster/sftp-cc-toomaster.git
+git clone https://github.com/toohamster/sftp-cc.git
 
 # 安装到目标项目
-bash sftp-cc-toomaster/install.sh /path/to/your-project
+bash sftp-cc/install.sh /path/to/your-project
 ```
 
 手动安装后的目录结构：
@@ -41,7 +41,7 @@ bash sftp-cc-toomaster/install.sh /path/to/your-project
 your-project/
 ├── .claude/
 │   ├── skills/
-│   │   └── sftp-cc-toomaster/
+│   │   └── sftp-cc/
 │   │       ├── skill.md
 │   │       └── scripts/
 │   └── sftp-cc/
@@ -62,7 +62,7 @@ your-project/
 bash ${CLAUDE_PLUGIN_ROOT}/scripts/sftp-init.sh
 
 # 手动安装后
-bash .claude/skills/sftp-cc-toomaster/scripts/sftp-init.sh
+bash .claude/skills/sftp-cc/scripts/sftp-init.sh
 ```
 
 脚本会依次询问：
@@ -87,7 +87,7 @@ bash ${CLAUDE_PLUGIN_ROOT}/scripts/sftp-init.sh \
   --private-key ~/.ssh/id_rsa
 
 # 手动安装后
-bash .claude/skills/sftp-cc-toomaster/scripts/sftp-init.sh \
+bash .claude/skills/sftp-cc/scripts/sftp-init.sh \
   --host your-server.com \
   --username deploy \
   --remote-path /var/www/html \
@@ -105,7 +105,7 @@ bash .claude/skills/sftp-cc-toomaster/scripts/sftp-init.sh \
 bash ${CLAUDE_PLUGIN_ROOT}/scripts/sftp-copy-id.sh
 
 # 手动安装后
-bash .claude/skills/sftp-cc-toomaster/scripts/sftp-copy-id.sh
+bash .claude/skills/sftp-cc/scripts/sftp-copy-id.sh
 ```
 
 **方式 B：直接使用 ssh-copy-id**
@@ -154,7 +154,7 @@ cp ~/.ssh/id_rsa .claude/sftp-cc/
   bash ${CLAUDE_PLUGIN_ROOT}/scripts/sftp-keybind.sh
 
   # 手动安装后
-  bash .claude/skills/sftp-cc-toomaster/scripts/sftp-keybind.sh
+  bash .claude/skills/sftp-cc/scripts/sftp-keybind.sh
   ```
 
 私钥会被自动检测、自动绑定到配置、自动修正权限为 600。

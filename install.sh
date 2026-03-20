@@ -1,5 +1,5 @@
 #!/bin/bash
-# install.sh — Install sftp-cc-toomaster skill to target project
+# install.sh — Install sftp-cc skill to target project
 # Usage: bash install.sh [TARGET_PROJECT_PATH] [OPTIONS]
 #
 # Options:
@@ -60,27 +60,27 @@ done
 TARGET="${TARGET:-.}"
 TARGET="$(cd "$TARGET" && pwd)"
 
-SKILL_DIR="$TARGET/.claude/skills/sftp-cc-toomaster"
+SKILL_DIR="$TARGET/.claude/skills/sftp-cc"
 SFTP_CC_DIR="$TARGET/.claude/sftp-cc"
 
 # Language-specific installer header
 if [ "$LANGUAGE" = "zh" ]; then
     echo -e "${BOLD}========================================${NC}"
-    echo -e "${BOLD}  sftp-cc-toomaster 安装程序${NC}"
+    echo -e "${BOLD}  sftp-cc 安装程序${NC}"
     echo -e "${BOLD}========================================${NC}"
     echo ""
     info "源目录：  $SOURCE_DIR"
     info "目标项目：$TARGET"
 elif [ "$LANGUAGE" = "ja" ]; then
     echo -e "${BOLD}========================================${NC}"
-    echo -e "${BOLD}  sftp-cc-toomaster インストーラー${NC}"
+    echo -e "${BOLD}  sftp-cc インストーラー${NC}"
     echo -e "${BOLD}========================================${NC}"
     echo ""
     info "ソース：  $SOURCE_DIR"
     info "ターゲット：$TARGET"
 else
     echo -e "${BOLD}========================================${NC}"
-    echo -e "${BOLD}  sftp-cc-toomaster Installer${NC}"
+    echo -e "${BOLD}  sftp-cc Installer${NC}"
     echo -e "${BOLD}========================================${NC}"
     echo ""
     info "Source:   $SOURCE_DIR"
@@ -90,7 +90,7 @@ echo ""
 
 # Check source files
 if [ ! -f "$SOURCE_DIR/skill.md" ]; then
-    error "skill.md not found, please run this script from sftp-cc-toomaster repository root"
+    error "skill.md not found, please run this script from sftp-cc repository root"
     exit 1
 fi
 
@@ -182,7 +182,7 @@ fi
 
 if [ ${#ENTRIES_TO_ADD[@]} -gt 0 ]; then
     echo "" >> "$GITIGNORE"
-    echo "# sftp-cc-toomaster (SFTP config & keys)" >> "$GITIGNORE"
+    echo "# sftp-cc (SFTP config & keys)" >> "$GITIGNORE"
     for entry in "${ENTRIES_TO_ADD[@]}"; do
         echo "$entry" >> "$GITIGNORE"
         info "  Added to .gitignore: $entry"

@@ -1,4 +1,4 @@
-# SFTP Push Skill — sftp-cc-toomaster
+# SFTP Push Skill — sftp-cc
 
 > 通用 SFTP 上传工具，支持私钥自动绑定与权限修正。
 
@@ -20,7 +20,7 @@ Trigger this Skill when the user expresses any of the following intents:
 
 - **配置文件**: `<项目根目录>/.claude/sftp-cc/sftp-config.json`
 - **私钥存放**: `<项目根目录>/.claude/sftp-cc/` 目录下
-- **脚本位置**: `<项目根目录>/.claude/skills/sftp-cc-toomaster/scripts/`
+- **脚本位置**: `<项目根目录>/.claude/skills/sftp-cc/scripts/`
 
 ## sftp-config.json 格式
 
@@ -44,7 +44,7 @@ Trigger this Skill when the user expresses any of the following intents:
 
 ### 1. sftp-init.sh — 初始化配置
 ```bash
-bash .claude/skills/sftp-cc-toomaster/scripts/sftp-init.sh \
+bash .claude/skills/sftp-cc/scripts/sftp-init.sh \
   --host example.com \
   --port 22 \
   --username deploy \
@@ -57,7 +57,7 @@ bash .claude/skills/sftp-cc-toomaster/scripts/sftp-init.sh \
 ### 2. sftp-copy-id.sh — 部署 SSH 公钥到服务器
 
 ```bash
-bash .claude/skills/sftp-cc-toomaster/scripts/sftp-copy-id.sh
+bash .claude/skills/sftp-cc/scripts/sftp-copy-id.sh
 ```
 - 从配置读取服务器信息（host, username）
 - 自动查找公钥文件（优先使用项目私钥对应的 .pub 文件，否则使用系统默认）
@@ -72,7 +72,7 @@ bash .claude/skills/sftp-cc-toomaster/scripts/sftp-copy-id.sh
 
 ### 3. sftp-keybind.sh — 私钥自动绑定
 ```bash
-bash .claude/skills/sftp-cc-toomaster/scripts/sftp-keybind.sh
+bash .claude/skills/sftp-cc/scripts/sftp-keybind.sh
 ```
 - 扫描 `.claude/sftp-cc/` 下的私钥文件（id_rsa, id_ed25519, *.pem, *.key）
 - 自动 `chmod 600` 修正权限
@@ -81,25 +81,25 @@ bash .claude/skills/sftp-cc-toomaster/scripts/sftp-keybind.sh
 ### 3. sftp-push.sh — 上传文件（默认增量）
 ```bash
 # 增量上传（默认，仅上传变更文件）
-bash .claude/skills/sftp-cc-toomaster/scripts/sftp-push.sh
+bash .claude/skills/sftp-cc/scripts/sftp-push.sh
 
 # 增量上传 + 同步删除远程已删除的文件
-bash .claude/skills/sftp-cc-toomaster/scripts/sftp-push.sh --delete
+bash .claude/skills/sftp-cc/scripts/sftp-push.sh --delete
 
 # 全量上传整个项目
-bash .claude/skills/sftp-cc-toomaster/scripts/sftp-push.sh --full
+bash .claude/skills/sftp-cc/scripts/sftp-push.sh --full
 
 # 上传指定文件
-bash .claude/skills/sftp-cc-toomaster/scripts/sftp-push.sh src/index.php config.php
+bash .claude/skills/sftp-cc/scripts/sftp-push.sh src/index.php config.php
 
 # 上传指定目录
-bash .claude/skills/sftp-cc-toomaster/scripts/sftp-push.sh -d src/
+bash .claude/skills/sftp-cc/scripts/sftp-push.sh -d src/
 
 # 预览模式（不实际上传）
-bash .claude/skills/sftp-cc-toomaster/scripts/sftp-push.sh -n
+bash .claude/skills/sftp-cc/scripts/sftp-push.sh -n
 
 # 详细输出
-bash .claude/skills/sftp-cc-toomaster/scripts/sftp-push.sh -v
+bash .claude/skills/sftp-cc/scripts/sftp-push.sh -v
 ```
 
 ## 首次使用引导流程

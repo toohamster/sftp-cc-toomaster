@@ -1,9 +1,9 @@
 ---
-name: sftp-cc-toomaster
+name: sftp-cc
 description: 通用 SFTP 上传工具，通过自然语言触发，将本地项目文件上传到远程服务器。支持增量上传、私钥自动绑定与权限修正。
 ---
 
-# SFTP Push Skill — sftp-cc-toomaster
+# SFTP Push Skill — sftp-cc
 
 > 通用 SFTP 上传工具，支持私钥自动绑定与权限修正。
 

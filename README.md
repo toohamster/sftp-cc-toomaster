@@ -1,4 +1,4 @@
-# sftp-cc-toomaster
+# sftp-cc
 
 [中文文档](README_CN.md) | [日本語ドキュメント](README_JP.md)
 
@@ -22,20 +22,20 @@ When using PhpStorm, the built-in SFTP extension automatically syncs every file 
 
 ```bash
 # Add marketplace
-/plugin marketplace add https://github.com/toohamster/sftp-cc-toomaster
+/plugin marketplace add https://github.com/toohamster/sftp-cc
 
 # Install plugin
-/plugin install sftp-cc-toomaster@sftp-cc-toomaster
+/plugin install sftp-cc@sftp-cc
 ```
 
 ### Option 2: Manual Installation
 
 ```bash
 # Clone repository
-git clone https://github.com/toohamster/sftp-cc-toomaster.git
+git clone https://github.com/toohamster/sftp-cc.git
 
 # Install to your project
-bash sftp-cc-toomaster/install.sh /path/to/your-project
+bash sftp-cc/install.sh /path/to/your-project
 ```
 
 ## Configuration
@@ -51,7 +51,7 @@ Run without arguments to enter interactive mode:
 bash ${CLAUDE_PLUGIN_ROOT}/scripts/sftp-init.sh
 
 # Manual installation
-bash .claude/skills/sftp-cc-toomaster/scripts/sftp-init.sh
+bash .claude/skills/sftp-cc/scripts/sftp-init.sh
 ```
 
 The script will prompt you for:
@@ -76,7 +76,7 @@ bash ${CLAUDE_PLUGIN_ROOT}/scripts/sftp-init.sh \
   --private-key ~/.ssh/id_rsa
 
 # Manual installation
-bash .claude/skills/sftp-cc-toomaster/scripts/sftp-init.sh \
+bash .claude/skills/sftp-cc/scripts/sftp-init.sh \
   --host your-server.com \
   --username deploy \
   --remote-path /var/www/html \
@@ -94,7 +94,7 @@ Open your terminal and run:
 bash ${CLAUDE_PLUGIN_ROOT}/scripts/sftp-copy-id.sh
 
 # Manual installation
-bash .claude/skills/sftp-cc-toomaster/scripts/sftp-copy-id.sh
+bash .claude/skills/sftp-cc/scripts/sftp-copy-id.sh
 ```
 
 **Option B: Use ssh-copy-id directly**
@@ -143,7 +143,7 @@ cp ~/.ssh/id_rsa .claude/sftp-cc/
   bash ${CLAUDE_PLUGIN_ROOT}/scripts/sftp-keybind.sh
 
   # Manual installation
-  bash .claude/skills/sftp-cc-toomaster/scripts/sftp-keybind.sh
+  bash .claude/skills/sftp-cc/scripts/sftp-keybind.sh
   ```
 
 The key will be auto-detected, auto-bound to the config, and permissions auto-corrected to `600`.
