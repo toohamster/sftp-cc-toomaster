@@ -32,7 +32,8 @@ Claude Code is a CLI programming assistant launched by Anthropic, and **Skill** 
 3. **What capabilities to provide** — Specific functions the Skill can complete
 
 Expressed in code, a Skill at minimum contains:
-```markdown
+
+````markdown
 ---
 name: my-skill
 description: My First Skill
@@ -44,7 +45,7 @@ When user says "hello", execute:
 ```bash
 echo "Hello, World!"
 ```
-```
+````
 
 ### 1.1.3 What Skills Can Do
 
@@ -140,7 +141,7 @@ my-plugin/
 
 SKILL.md is the core definition file for the Skill, containing:
 
-```markdown
+````markdown
 ---
 name: skill-name
 description: Brief description of what your skill does
@@ -284,12 +285,12 @@ bash ~/.claude/plugins/marketplaces/sftp-cc/scripts/sftp-push.sh
 
 **A**: Yes! Any scripting language works:
 
-```markdown
+````markdown
 Execute:
 ```bash
 python3 ${CLAUDE_PLUGIN_ROOT}/scripts/my-script.py
 ```
-```
+````
 
 ---
 

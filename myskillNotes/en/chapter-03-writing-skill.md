@@ -17,7 +17,7 @@ In this chapter, you will learn:
 
 Here's a complete SKILL.md example from sftp-cc:
 
-```markdown
+````markdown
 ---
 name: sftp-cc
 description: Universal SFTP upload tool, triggered by natural language, uploads local project files to remote server. Supports incremental upload, automatic private key binding and permission correction.
@@ -98,7 +98,7 @@ When user first requests SFTP operation:
 3. **Deploy public key**: Run `sftp-copy-id.sh` on local terminal
 4. **Check private key**: Look in `.claude/sftp-cc/` for key files
 5. **Execute upload**: Run `sftp-push.sh`
-```
+````
 
 ### 3.1.2 Structure Breakdown
 
@@ -209,7 +209,7 @@ Example:
 
 Organize trigger words by functionality:
 
-```markdown
+````markdown
 ## When to Trigger
 
 **Category 1: Upload/Deploy**

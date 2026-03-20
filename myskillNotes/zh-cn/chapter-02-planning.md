@@ -165,7 +165,7 @@
 
 用用户故事的形式描述需求：
 
-```markdown
+````markdown
 作为 开发者
 我想要 告诉 Claude"同步代码到服务器"
 以便于 自动将修改的代码上传到测试服务器
@@ -181,7 +181,7 @@
 作为 开发者
 我想要 配置哪些文件不上传
 以便于 排除 .git、node_modules 等目录
-```
+````
 
 ---
 
@@ -840,7 +840,7 @@ bash scripts/sftp-init.sh
 
 #### SFTP 上传类触发词
 
-```markdown
+````markdown
 **英文**:
 - "sync code to server"
 - "upload to server"
@@ -859,11 +859,11 @@ bash scripts/sftp-init.sh
 - "サーバーに同期する"
 - "コードをデプロイする"
 - "アップロード"
-```
+````
 
 #### 私钥绑定类触发词
 
-```markdown
+````markdown
 **英文**:
 - "bind sftp private key"
 - "bind ssh key"
@@ -877,11 +877,11 @@ bash scripts/sftp-init.sh
 **日文**:
 - "秘密鍵をバインドする"
 - "SSH 鍵をバインドする"
-```
+````
 
 #### 配置初始化类触发词
 
-```markdown
+````markdown
 **英文**:
 - "initialize sftp config"
 - "setup sftp"
@@ -891,7 +891,7 @@ bash scripts/sftp-init.sh
 - "初始化 SFTP 配置"
 - "配置 SFTP"
 - "设置 SFTP"
-```
+````
 
 ### 2.5.3 触发词测试清单
 

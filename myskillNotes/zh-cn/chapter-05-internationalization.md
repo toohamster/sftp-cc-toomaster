@@ -566,13 +566,13 @@ load_messages() {
 
 #### 步骤 2：更新文档
 
-```markdown
+````markdown
 支持的语言：
 - English (en)
 - 中文 (zh, zh_CN, zh_TW)
 - 日本語 (ja, ja_JP)
 - 한국어 (ko, ko_KR)  ← 新增
-```
+````
 
 #### 步骤 3：测试
 
@@ -667,7 +667,7 @@ MSG_UPLOAD_ERR            # 缩写不清晰
 
 ### 5.7.2 SKILL.md 中的触发词分组
 
-```markdown
+````markdown
 ## When to trigger this Skill
 
 **SFTP 上传/部署类**:
@@ -684,7 +684,7 @@ MSG_UPLOAD_ERR            # 缩写不清晰
 - "initialize sftp config", "setup sftp"                   # 英文
 - "初始化 SFTP 配置"、"配置 SFTP"                          # 中文
 - "SFTP 設定を初期化"、"SFTP 設定"                         # 日文
-```
+````
 
 ### 5.7.3 触发词设计原则
 

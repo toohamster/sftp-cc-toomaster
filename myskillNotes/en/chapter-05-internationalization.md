@@ -564,13 +564,13 @@ load_messages() {
 
 #### Step 2: Update Documentation
 
-```markdown
+````markdown
 Supported Languages:
 - English (en)
 - Chinese (zh, zh_CN, zh_TW)
 - Japanese (ja, ja_JP)
 - Korean (ko, ko_KR)  ← New
-```
+````
 
 #### Step 3: Test
 

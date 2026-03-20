@@ -748,7 +748,7 @@ claude plugin reload sftp-cc
 - ❌ Plugin not loaded
 
 **Fix:**
-```markdown
+````markdown
 # In SKILL.md, be specific with triggers:
 
 ## When to trigger
@@ -762,7 +762,7 @@ NOT just:
 - "upload"                  ✗ Too generic
 - "sync"                    ✗ Too generic
 - "push"                    ✗ Conflicts with git
-```
+````
 
 ### 8.5.2 Variable Not Resolved
 

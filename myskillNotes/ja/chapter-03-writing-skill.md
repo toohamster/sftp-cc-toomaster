@@ -19,7 +19,7 @@
 
 sftp-cc の実際の SKILL.md を見てみましょう：
 
-```markdown
+````markdown
 ---
 name: sftp-cc
 description: 汎用 SFTP アップロードツール、自然言語でトリガー、ローカルプロジェクトファイルをリモートサーバーにアップロード。増分アップロード、自動秘密鍵バインド、権限修正をサポート。
@@ -129,7 +129,7 @@ bash ${CLAUDE_PLUGIN_ROOT}/scripts/sftp-keybind.sh
 
 **問題**: 秘密鍵の権限エラー
 - `chmod 600 ~/.ssh/id_rsa` で権限を修正
-```
+````
 
 ### 3.1.2 必須セクション
 
@@ -368,7 +368,7 @@ ${CLAUDE_PLUGIN_ROOT}/scripts/sftp-push.sh
 
 ### 3.4.3 よくある間違い
 
-```markdown
+````markdown
 ❌ 間違い 1: 相対パス
 ```bash
 bash ./scripts/sftp-push.sh  # 失敗：カレントディレクトリに依存
@@ -383,7 +383,7 @@ bash ~/.claude/plugins/sftp-cc/scripts/sftp-push.sh  # 失敗：固定パス
 ```bash
 bash ${CLAUDE_PLUGIN_ROOT}/scripts/sftp-push.sh  # 成功：自動解決
 ```
-```
+````
 
 ---
 
@@ -393,7 +393,7 @@ bash ${CLAUDE_PLUGIN_ROOT}/scripts/sftp-push.sh  # 成功：自動解決
 
 単一スクリプトの実行：
 
-```markdown
+````markdown
 ## 実行
 
 トリガーされると、次を実行：
@@ -401,7 +401,7 @@ bash ${CLAUDE_PLUGIN_ROOT}/scripts/sftp-push.sh  # 成功：自動解決
 ```bash
 bash ${CLAUDE_PLUGIN_ROOT}/scripts/my-script.sh
 ```
-```
+````
 
 ### 3.5.2 条件付き実行
 
@@ -424,13 +424,13 @@ bash ${CLAUDE_PLUGIN_ROOT}/scripts/sftp-keybind.sh
 ```bash
 bash ${CLAUDE_PLUGIN_ROOT}/scripts/sftp-init.sh
 ```
-```
+````
 
 ### 3.5.3 パラメータ付き実行
 
 スクリプトにパラメータを渡す：
 
-```markdown
+````markdown
 ## 実行
 
 デフォルト（増分アップロード）：
@@ -447,7 +447,7 @@ bash ${CLAUDE_PLUGIN_ROOT}/scripts/sftp-push.sh -n
 ```bash
 bash ${CLAUDE_PLUGIN_ROOT}/scripts/sftp-push.sh --full
 ```
-```
+````
 
 ---
 
@@ -457,7 +457,7 @@ bash ${CLAUDE_PLUGIN_ROOT}/scripts/sftp-push.sh --full
 
 新規ユーザーのためのクイックスタート：
 
-```markdown
+````markdown
 ## はじめに
 
 **ステップ 1: 設定を作成**
@@ -477,7 +477,7 @@ bash ${CLAUDE_PLUGIN_ROOT}/scripts/sftp-init.sh
 **ステップ 4: アップロード**
 
 「コードをサーバーに同期」と言ってください。
-```
+````
 
 ### 3.6.2 設定セクション
 
@@ -614,7 +614,7 @@ claude plugin reload sftp-cc
 - `${CLAUDE_PLUGIN_ROOT}` が Skill コンテキスト外で使用
 
 **解決策**：
-```markdown
+````markdown
 ✅ 良い：
 ```bash
 bash ${CLAUDE_PLUGIN_ROOT}/scripts/script.sh
@@ -625,7 +625,7 @@ bash ${CLAUDE_PLUGIN_ROOT}/scripts/script.sh
 bash ${CLAUDE_PLUGIN_ROOT}/scripts/script.sh
 # 失敗：変数が空
 ```
-```
+````
 
 #### 問題 3: スクリプトが実行されない
 

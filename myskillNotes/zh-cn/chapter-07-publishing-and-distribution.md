@@ -382,7 +382,7 @@ echo "下一个 MAJOR 版本：$NEW_MAJOR"
 
 ### 7.3.3 CHANGELOG.md 规范
 
-```markdown
+````markdown
 # Changelog
 
 All notable changes to this project will be documented in this file.
@@ -422,7 +422,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 - 移除已废弃的兼容模式
-```
+````
 
 ---
 
@@ -902,7 +902,7 @@ MIT
 
 #### README_CN.md（中文文档）
 
-```markdown
+````markdown
 # sftp-cc
 
 > 通用的 Claude Code SFTP 上传工具
@@ -983,7 +983,7 @@ bash scripts/sftp-keybind.sh
 ## 许可证
 
 MIT
-```
+````
 
 ### 7.5.2 多语言维护技巧
 

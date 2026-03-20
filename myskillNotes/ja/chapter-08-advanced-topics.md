@@ -747,7 +747,7 @@ claude plugin reload sftp-cc
 - ❌ プラグインがロードされていない
 
 **修正**：
-```markdown
+````markdown
 # SKILL.md で、トリガーを具体的に：
 
 ## トリガー
@@ -761,7 +761,7 @@ claude plugin reload sftp-cc
 - "アップロード"               ✗ 一般的すぎる
 - "同期"                      ✗ 一般的すぎる
 - "プッシュ"                  ✗ git と競合
-```
+````
 
 ### 8.5.2 変数が解決されない
 

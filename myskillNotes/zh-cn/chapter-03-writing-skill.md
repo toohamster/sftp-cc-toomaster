@@ -54,12 +54,12 @@ SKILL.md 是一个特殊的 Markdown 文件，它由三个核心部分组成：
 
 让我们逐行分析一个生产级的 SKILL.md：
 
-```markdown
+````markdown
 ---
 name: sftp-cc
 description: 通用 SFTP 上传工具，通过自然语言触发，将本地项目文件上传到远程服务器。支持增量上传、私钥自动绑定与权限修正。
 ---
-```
+````
 
 **YAML Frontmatter 解析**：
 - `name`: Skill 的唯一标识符，用于内部引用
@@ -160,7 +160,7 @@ bash ${CLAUDE_PLUGIN_ROOT}/scripts/sftp-push.sh --full
 - **关键技巧**：添加明确的执行条件说明
 - 展示常用参数组合
 
-```markdown
+````markdown
 ## 首次使用引导流程
 
 当用户首次请求 SFTP 操作时，按以下步骤引导：
@@ -170,7 +170,7 @@ bash ${CLAUDE_PLUGIN_ROOT}/scripts/sftp-push.sh --full
 3. **部署公钥到服务器**: 在本地终端运行 `sftp-copy-id.sh`
 4. **检查私钥**: 查看 `.claude/sftp-cc/` 下是否有私钥文件
 5. **执行上传**: 运行 `sftp-push.sh`
-```
+````
 
 **用户引导流程**：
 - 分步骤说明（1, 2, 3...）
@@ -578,12 +578,12 @@ bash ${CLAUDE_PLUGIN_ROOT}/scripts/sftp-init.sh \
 
 #### 条件参数
 
-```markdown
+````markdown
 如果用户请求全量上传，添加 `--full` 参数：
 ```bash
 bash ${CLAUDE_PLUGIN_ROOT}/scripts/sftp-push.sh --full
 ```
-```
+````
 
 #### 用户输入参数
 
@@ -612,7 +612,7 @@ bash ${CLAUDE_PLUGIN_ROOT}/scripts/sftp-push.sh file1.php file2.php
 
 #### 标准格式
 
-```markdown
+````markdown
 ## 首次使用引导
 
 当用户首次请求 <功能> 时，按以下步骤引导：
@@ -621,7 +621,7 @@ bash ${CLAUDE_PLUGIN_ROOT}/scripts/sftp-push.sh file1.php file2.php
 2. **如果 <条件 1 不满足>**: <操作>
 3. **检查 <条件 2>**: <检查方法>
 4. **执行 <操作>**: <命令>
-```
+````
 
 #### 完整示例
 
@@ -808,7 +808,7 @@ cd my-weather-skill
 
 ### 3.7.4 步骤 3：创建 SKILL.md
 
-```markdown
+````markdown
 ---
 name: weather-skill
 description: Query weather information via natural language
@@ -848,7 +848,7 @@ bash ${CLAUDE_PLUGIN_ROOT}/scripts/weather.sh [城市名]
 直接询问天气即可，例如：
 - "今天天气怎么样？"
 - "what's the weather in Tokyo?"
-```
+````
 
 ### 3.7.5 步骤 4：创建 weather.sh 脚本
 

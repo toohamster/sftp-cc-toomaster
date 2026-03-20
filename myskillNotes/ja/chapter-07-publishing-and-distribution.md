@@ -688,7 +688,7 @@ sftp-cc/
 
 ### 7.5.2 英語 README.md 構造
 
-```markdown
+````markdown
 # sftp-cc
 
 Universal SFTP upload tool for Claude Code.
@@ -748,11 +748,11 @@ Universal SFTP upload tool for Claude Code.
 ## ライセンス
 
 MIT License
-```
+````
 
 ### 7.5.3 中国語 README_CN.md 構造
 
-```markdown
+````markdown
 # sftp-cc
 
 通用的 Claude Code SFTP 上传工具。
@@ -812,11 +812,11 @@ MIT License
 ## 授权
 
 MIT License
-```
+````
 
 ### 7.5.4 日本語 README_JP.md 構造
 
-```markdown
+````markdown
 # sftp-cc
 
 Claude Code 用の汎用 SFTP アップロードツール
@@ -876,13 +876,13 @@ Claude Code 用の汎用 SFTP アップロードツール
 ## ライセンス
 
 MIT License
-```
+````
 
 ### 7.5.5 言語リンク
 
 各 README は他へのリンクを含める必要があります：
 
-```markdown
+````markdown
 ## 他の言語
 
 | 言語 | リンク |
@@ -890,7 +890,7 @@ MIT License
 | 英語 | [README.md](README.md) |
 | 中国語 | [README_CN.md](README_CN.md) |
 | 日本語 | [README_JP.md](README_JP.md) |
-```
+````
 
 ---
 
