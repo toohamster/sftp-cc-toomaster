@@ -108,3 +108,34 @@ grep -r "pattern" myskillNotes/*/ --include="*.md"
 ---
 
 **记住：慢就是快。先核对，再执行，一次做对。**
+
+---
+
+## 版本恢复操作规范
+
+### 教训：恢复版本时必须核对内容
+
+**问题**：使用 `git checkout <commit> -- <file>` 恢复时，没有验证该提交的内容，导致恢复了错误的配置。
+
+**错误过程**：
+1. 用户要求恢复到"能正常生成 PDF 的版本"
+2. 我执行了 `git checkout eb836c9 -- .github/workflows/generate-pdf.yml`
+3. 但 eb836c9 本身就是"添加 README/authors 的提交"，所以问题依旧
+
+**正确流程**：
+
+| 步骤 | 操作 | 说明 |
+|------|------|------|
+| 1. 定位 | `git log --oneline <file>` | 查看文件提交历史 |
+| 2. 确认 | `git show <commit>:<file> | head -50` | 查看该提交的内容 |
+| 3. 对比 | `git diff <commit> HEAD <file>` | 对比当前版本的差异 |
+| 4. 汇报 | 向用户展示要恢复的内容 | 等待确认 |
+| 5. 执行 | `git checkout <commit> -- <file>` | 执行恢复 |
+| 6. 验证 | `git diff` 展示结果 | 用户确认后再提交 |
+
+**核心原则**：
+- 不使用"应该是这个版本"的假设
+- 恢复前必须显示内容给用户核对
+- 恢复后等待用户确认再提交
+
+---
