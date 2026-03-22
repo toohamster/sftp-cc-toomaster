@@ -562,4 +562,3 @@ value=$(grep '"host"' config.json | sed 's/.*: *"\([^"]*\)".*/\1/')
 
 詳細は [LICENSE](../../LICENSE) と [著者について](../authors.md) をご覧ください。
 
----

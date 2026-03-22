@@ -1060,4 +1060,3 @@ By the end of Chapter 7, you'll be ready to share your Skill with the world!
 
 See [LICENSE](../../LICENSE) and [About Author](../authors.md) for details.
 
----

@@ -741,4 +741,3 @@ head -1 scripts/sftp-push.sh
 
 詳細は [LICENSE](../../LICENSE) と [著者について](../authors.md) をご覧ください。
 
----

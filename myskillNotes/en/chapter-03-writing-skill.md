@@ -511,4 +511,3 @@ By the end of Chapter 4, you'll be able to write robust Shell scripts for your S
 
 See [LICENSE](../../LICENSE) and [About Author](../authors.md) for details.
 
----

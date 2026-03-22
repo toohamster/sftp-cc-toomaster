@@ -1329,4 +1329,3 @@ info "総サブプロセス呼び出し：$subprocess_count"
 
 詳細は [LICENSE](../../LICENSE) と [著者について](../authors.md) をご覧ください。
 
----

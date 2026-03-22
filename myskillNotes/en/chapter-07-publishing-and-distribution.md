@@ -1155,4 +1155,3 @@ By the end of Chapter 8, you'll write production-ready Skills!
 
 See [LICENSE](../../LICENSE) and [About Author](../authors.md) for details.
 
----

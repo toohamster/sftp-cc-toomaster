@@ -1332,4 +1332,3 @@ Good luck, and happy coding!
 
 See [LICENSE](../../LICENSE) and [About Author](../authors.md) for details.
 
----

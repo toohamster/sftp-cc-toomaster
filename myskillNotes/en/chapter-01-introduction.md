@@ -493,4 +493,3 @@ By the end of Chapter 2, you'll complete the full design document for sftp-cc pr
 
 See [LICENSE](../../LICENSE) and [About Author](../authors.md) for details.
 
----

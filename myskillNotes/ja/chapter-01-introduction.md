@@ -493,4 +493,3 @@ curl wttr.in?format=3
 
 詳細は [LICENSE](../../LICENSE) と [著者について](../authors.md) をご覧ください。
 
----

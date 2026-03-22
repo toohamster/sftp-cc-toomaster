@@ -728,4 +728,3 @@ By the end of Chapter 3, you'll have your first working Skill!
 
 See [LICENSE](../../LICENSE) and [About Author](../authors.md) for details.
 
----

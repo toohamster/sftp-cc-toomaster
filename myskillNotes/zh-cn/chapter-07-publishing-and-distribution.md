@@ -1272,4 +1272,3 @@ See [CHANGELOG.md](https://github.com/${context.repo.owner}/${context.repo.repo}
 
 详细说明请参阅 [LICENSE](../../LICENSE) 和 [关于作者](../authors.md)
 
----

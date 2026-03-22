@@ -1152,4 +1152,3 @@ Skill の完全な `marketplace.json` を作成：
 
 詳細は [LICENSE](../../LICENSE) と [著者について](../authors.md) をご覧ください。
 
----
