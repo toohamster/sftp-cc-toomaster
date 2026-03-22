@@ -74,9 +74,9 @@ jobs:
       - name: Combine all English chapters into one book
         run: |
           echo "Combining English book..."
-          # Create combined markdown with separator between authors and chapters
+          # Combine files, remove internal --- but keep separator before chapters
           {
-            cat myskillNotes/en/README.md myskillNotes/en/authors.md
+            cat myskillNotes/en/README.md myskillNotes/en/authors.md | sed '/^---$/d'
             echo ""
             echo "---"
             echo ""
@@ -88,16 +88,16 @@ jobs:
             -V documentclass=report \
             -V geometry:margin=1in \
             -V mainfont="Noto Serif CJK SC" \
-            -V title="sftp-cc: Claude Code Skill Development Book" \
-            -V author="toohamster"
+            --metadata title="sftp-cc: Claude Code Skill Development Book" \
+            --metadata author="toohamster"
           rm pdfs/en-book-combined.md
 
       - name: Combine all Chinese chapters into one book
         run: |
           echo "Combining Chinese book..."
-          # Create combined markdown with separator between authors and chapters
+          # Combine files, remove internal --- but keep separator before chapters
           {
-            cat myskillNotes/zh-cn/README.md myskillNotes/zh-cn/authors.md
+            cat myskillNotes/zh-cn/README.md myskillNotes/zh-cn/authors.md | sed '/^---$/d'
             echo ""
             echo "---"
             echo ""
@@ -109,16 +109,16 @@ jobs:
             -V documentclass=report \
             -V geometry:margin=1in \
             -V mainfont="Noto Serif CJK SC" \
-            -V title="sftp-cc: Claude Code Skill 开发教程" \
-            -V author="toohamster"
+            --metadata title="sftp-cc: Claude Code Skill 开发教程" \
+            --metadata author="toohamster"
           rm pdfs/zh-cn-book-combined.md
 
       - name: Combine all Japanese chapters into one book
         run: |
           echo "Combining Japanese book..."
-          # Create combined markdown with separator between authors and chapters
+          # Combine files, remove internal --- but keep separator before chapters
           {
-            cat myskillNotes/ja/README.md myskillNotes/ja/authors.md
+            cat myskillNotes/ja/README.md myskillNotes/ja/authors.md | sed '/^---$/d'
             echo ""
             echo "---"
             echo ""
@@ -130,8 +130,8 @@ jobs:
             -V documentclass=report \
             -V geometry:margin=1in \
             -V mainfont="Noto Serif CJK SC" \
-            -V title="sftp-cc: Claude Code Skill 開発ガイド" \
-            -V author="toohamster"
+            --metadata title="sftp-cc: Claude Code Skill 開発ガイド" \
+            --metadata author="toohamster"
           rm pdfs/ja-book-combined.md
 
       - name: List generated PDFs
