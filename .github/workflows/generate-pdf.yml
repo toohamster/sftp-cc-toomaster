@@ -77,13 +77,15 @@ jobs:
       - name: Combine all English chapters into one book
         run: |
           echo "Combining English book..."
+          # Preprocess markdown files for PDF generation
+          .github/pdf-helpers/pdf-preprocess.sh myskillNotes/en /tmp/pdf-preprocess/en
           # Combine files, remove internal --- but keep separator before chapters
           {
-            cat myskillNotes/en/README.md myskillNotes/en/authors.md | sed '/^---$/d'
+            cat /tmp/pdf-preprocess/en/README.md /tmp/pdf-preprocess/en/authors.md | sed '/^---$/d'
             echo ""
             echo "---"
             echo ""
-            cat myskillNotes/en/chapter-*.md
+            cat /tmp/pdf-preprocess/en/chapter-*.md
           } > pdfs/en-book-combined.md
           pandoc pdfs/en-book-combined.md \
             -o "pdfs/sftp-cc-book-en.pdf" \
@@ -94,18 +96,20 @@ jobs:
             -V monofont="Noto Sans Mono CJK SC" \
             --metadata title="sftp-cc: Claude Code Skill Development Book" \
             --metadata author="toohamster"
-          rm pdfs/en-book-combined.md
+          rm -rf /tmp/pdf-preprocess/en pdfs/en-book-combined.md
 
       - name: Combine all Chinese chapters into one book
         run: |
           echo "Combining Chinese book..."
+          # Preprocess markdown files for PDF generation
+          .github/pdf-helpers/pdf-preprocess.sh myskillNotes/zh-cn /tmp/pdf-preprocess/zh-cn
           # Combine files, remove internal --- but keep separator before chapters
           {
-            cat myskillNotes/zh-cn/README.md myskillNotes/zh-cn/authors.md | sed '/^---$/d'
+            cat /tmp/pdf-preprocess/zh-cn/README.md /tmp/pdf-preprocess/zh-cn/authors.md | sed '/^---$/d'
             echo ""
             echo "---"
             echo ""
-            cat myskillNotes/zh-cn/chapter-*.md
+            cat /tmp/pdf-preprocess/zh-cn/chapter-*.md
           } > pdfs/zh-cn-book-combined.md
           pandoc pdfs/zh-cn-book-combined.md \
             -o "pdfs/sftp-cc-book-zh-cn.pdf" \
@@ -116,18 +120,20 @@ jobs:
             -V monofont="Noto Sans Mono CJK SC" \
             --metadata title="sftp-cc: Claude Code Skill 开发教程" \
             --metadata author="toohamster"
-          rm pdfs/zh-cn-book-combined.md
+          rm -rf /tmp/pdf-preprocess/zh-cn pdfs/zh-cn-book-combined.md
 
       - name: Combine all Japanese chapters into one book
         run: |
           echo "Combining Japanese book..."
+          # Preprocess markdown files for PDF generation
+          .github/pdf-helpers/pdf-preprocess.sh myskillNotes/ja /tmp/pdf-preprocess/ja
           # Combine files, remove internal --- but keep separator before chapters
           {
-            cat myskillNotes/ja/README.md myskillNotes/ja/authors.md | sed '/^---$/d'
+            cat /tmp/pdf-preprocess/ja/README.md /tmp/pdf-preprocess/ja/authors.md | sed '/^---$/d'
             echo ""
             echo "---"
             echo ""
-            cat myskillNotes/ja/chapter-*.md
+            cat /tmp/pdf-preprocess/ja/chapter-*.md
           } > pdfs/ja-book-combined.md
           pandoc pdfs/ja-book-combined.md \
             -o "pdfs/sftp-cc-book-ja.pdf" \
@@ -138,7 +144,7 @@ jobs:
             -V monofont="Noto Sans Mono CJK JP" \
             --metadata title="sftp-cc: Claude Code Skill 開発ガイド" \
             --metadata author="toohamster"
-          rm pdfs/ja-book-combined.md
+          rm -rf /tmp/pdf-preprocess/ja pdfs/ja-book-combined.md
 
       - name: List generated PDFs
         run: |
